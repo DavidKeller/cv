@@ -1,6 +1,5 @@
-resume.aux
-resume.dvi
-resume.dvi.pdf
-resume.log
-resume.out
-resume.pdf
+*.aux
+*.dvi
+*.log
+*.out
+*.pdf
