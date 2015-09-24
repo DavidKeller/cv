@@ -3,6 +3,7 @@
 \usepackage{array, xcolor, bibentry}
 \usepackage{hyperref}
 \usepackage[margin=3cm]{geometry}
+\usepackage{longtable}
 
 \title{\bfseries{\Huge David Keller} \\ Ingénieur développeur}
 \date{}
@@ -11,6 +12,7 @@
 \newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
 \newcolumntype{R}{p{0.8\textwidth}}
 \newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\newcommand\pspace{\hspace{0.5cm}}
 
 \begin{document}
 
@@ -25,81 +27,162 @@
 \vspace{20pt}
 
 \section*{Points forts}
-Expert C++\\
+Compétence C++\\
 Autonomie, Curiosité, Créativité
 
 \section*{Formation}
-\begin{tabular}{L!{\VRule}R}
+\begin{longtable}{L!{\VRule}R}
 2006-09
-& Diplômé de l'école d'{\bf ingénieur informatique} et management EFREI.
+& Diplômé de l'école d'\bf{ingénieur informatique} et management EFREI.
 
 \\
 2004-06
-& Diplômé de l'IUT de Cachan Génie Electrique \& {\bf Informatique Industrielle}.
-\end{tabular}
+& Diplômé de l'IUT de Cachan Génie Electrique \& \bf{Informatique Industrielle}.
+\end{longtable}
 
-\section*{Compétence}
-\begin{tabular}{L!{\VRule}R}
+\section*{Compétences}
+\begin{longtable}{L!{\VRule}R}
 Langages
-& {\bf C++11 (Boost)}, C89, C\# (.Net 4.0), java 6, ruby
+& \bf{C++14}, C11, Java 6, C\# (.Net 3.5), Python, Ruby, VHDL
 
 \\
-Tests-U
+Tests
 & Google test, Boost unit-test, JUnit
 
 \\
 OS
-& FreeBSD, OpenBSD, Windows, Linux
-
-\\
-SGBDR
-& Oracle, Mysql
+& Linux, FreeBSD, OpenBSD, Windows
 
 \\
 SCM
-& {\bf git}, subversion
+& \bf{git}, subversion
 
 \\
 Build
-& Autotools, CMake, bjam, Qmake, Maven, MSBuild, Usines (Teamcity, CCNet)
+& CMake, Autotools, bjam, Qmake, Maven, MSBuild, Usines 
+(Teamcity, Buildbot, Jenkins, CCNet)
 
 \\
 Documentation
-& {\bf Doxygen}, LaTex, HTML
+& \bf{Doxygen}, LaTex, HTML
 
 \\
 Langues
 & Anglais technique
 
-\end{tabular}
+\end{longtable}
+
+\clearpage
 
 \section*{Expériences professionelles}
-\begin{tabular}{L!{\VRule}R}
+\begin{longtable}{L!{\VRule}R}
 Depuis 2012
-& {\bf Architecte logiciel chez Enyx - Paris}\\
-& Création de l'API cliente C++ de consommation des 
-  données marché et de passage d'ordres.
+& \bf{Architecte logiciel chez Enyx - Paris}
+\\
+& Création de l'API cliente C++ de consommation de
+  données marché et de passage d'ordres via \bf{FPGA}.
 
 \\
-2009 - 2012 
-& {\bf Prestation à la Société Générale - La défense}\\
-& Evolution et maintenance des composants C++, C\#, java 
-  de la chaîne de valorisation des deals.\\
-& Mises à jour des outils et process de dévelopement 
-  et d'intégration, en particulier migration + formation des équipes pour le passage
-  au SCM git.
+2009 - 2012
+& \bf{Prestation à la Société Générale - La défense}
+\\
+& Evolution et maintenance des composants C++, C\#, java
+  de la chaîne de valorisation des deals (grille de calcules).
+
+\\
+& \pspace Premier emploi: dans l'équipe \textit{TECH} de l'\textit{AGREG}.
+  Comme son nom l'indique, les tâches étaient résolument techniques et
+  légèrement décorrélées de la finance.
+\\
+& \pspace Ma première mission a porté sur la prise en compte des fuseaux
+  horaires par le système.
+\\
+& \pspace La seconde sur la mise en place d'un cache de données statiques à 
+  sur le système de fichier distribué.
+\\
+& \pspace Les suivantes concernaient avant tout la création de nouvelles
+  bibliothèques utilisées par les équipes orientées finance
+  afin qu'elles puissent charger plus facilement leurs données
+  (accès BDD et caching) et communiquer leurs résultats ou éventuelles erreurs.
+\\
+& \pspace En marge de ces projets, j'ai oe{}uvré à la mise à jour des outils 
+  \& processus de développement et d'intégration, en particulier 
+  migration + formation des équipes pour le passage à Git.
+  Ainsi que la revue de code systématique pour les développeurs débutants
+  ou peu rigoureux.
+
+\\
+& Cette expérience m'a beaucoup apporté:
+  \begin{itemize}
+  \item Découverte du monde de la finance
+  \item Utilisation du C++11
+  \item Travail en équipe
+  \item Problématiques de calcul sur grille
+  \item Développement sous Windows
+  \item Poids des processus dans un grand groupe
+  \end{itemize}
 
 \\
 2009
-& {\bf byVOLTA - Paris}\\
+& \bf{byVOLTA - Paris}
+\\
 & Conception d'un langage objet, proche de l'anglais, destiné à décrire
-les interactions entre les produits de l'entreprise, ainsi que son
-interpréteur en C++ modulaire, et par ce biais, extensible.
+  les interactions entre les produits de l'entreprise, ainsi que son
+  interpréteur en C++ modulaire, et par ce biais, extensible.
+
+\\
+& \pspace Lors du stage M2: seul développeur dans une société de 6
+  désigneurs sensoriels, ma responsabilité portait sur
+  l'écriture du firmware de \textit{LaChose}, un boitier intelligent,
+  permettant par exemple aux clients de byVOLTA d'orchestrer 
+  la communication entre l'éclairage, un diffuseur d'odeur et un 
+  équipement audio.
+\\
+& \pspace Après une semaine de familiarisation avec la gamme de produit,
+  j'ai très rapidement été confronté aux questions techniques et reçu
+  assez de liberté pour avoir le choix de l'interface de communication 
+  avec le client.
+\\
+& \pspace J'ai alors opté pour un langage de script maison, dont l'interpréteur 
+  a été implementé en C++ dans les semaines qui ont suivi.
+
+\\
+& Ce contexte m'a aidé à travailler ma communication avec
+  les non-développeurs.
 
 \\
 2006
-& {\bf dBResearch - Liverpool}\\
-& Conception et réalisation de la pile réseau TCP/IP d'une boite noire maritime (ATMEL ARM9) ainsi qu'un serveur http de contenu statique.
-\end{tabular}
+& \bf{dBResearch - Liverpool}
+\\
+& Conception et réalisation de la pile réseau TCP/IP d'une boite noire 
+  maritime (ATMEL ARM9) ainsi qu'un serveur http de contenu statique.
+
+\\
+& \pspace Dans le cadre du stage L2: seul, j'ai été chargé la première semaine de
+  comprendre le fonctionnement
+  \begin{itemize}
+  \item d'un cpu arm
+  \item d'un contrôleur ethernet
+  \end{itemize}
+\\
+& \pspace Puis d'écrire les deux suivantes en C89 le code d'un fimrware capable de
+  les piloter.
+\\
+& \pspace Enfin les deux dernières semaines ont été consacrées à la réalisation
+  d'une pile TCP/IP chargée de gérée une connexion ainsi
+  qu'un serveur http communiquant des statistiques propres à la pile.
+
+\\
+& Ce stage m'a permis de renforcer mon anglais, et d'accroitre mon autonomie.
+\end{longtable}
+
+\section*{Projets personnels}
+\begin{longtable}{L!{\VRule}R}
+Github
+& \href{https://github.com/DavidKeller/kademlia}{{\bf DavidKeller/Kademlia (C++11)}}
+\\
+& Table de hashage distribuée.
+
+\end{longtable}
 
 \end{document}
