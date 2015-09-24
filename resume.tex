@@ -3,6 +3,7 @@
 \usepackage{array, xcolor, bibentry}
 \usepackage{hyperref}
 \usepackage[margin=3cm]{geometry}
+\usepackage{longtable}
 
 \title{\bfseries{\Huge David Keller} \\ Ingénieur développeur}
 \date{}
@@ -10,7 +11,8 @@
 \definecolor{lightgray}{gray}{0.8}
 \newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
 \newcolumntype{R}{p{0.8\textwidth}}
-\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\newcommand{\VRule}{{\color{lightgray}\vrule width 0.5pt}}
+\newcommand{\HRule}{\begin{center}{\color{lightgray}\rule{0.5\textwidth}{0.5pt}}\end{center}}
 
 \begin{document}
 
@@ -25,81 +27,200 @@
 \vspace{20pt}
 
 \section*{Points forts}
-Expert C++\\
+Compétence C++\\
 Autonomie, Curiosité, Créativité
 
 \section*{Formation}
-\begin{tabular}{L!{\VRule}R}
+\begin{longtable}{L!{\VRule}R}
 2006-09
-& Diplômé de l'école d'{\bf ingénieur informatique} et management EFREI.
+& Diplômé de l'école d'\textbf{ingénieur informatique} et management EFREI.
 
 \\
 2004-06
-& Diplômé de l'IUT de Cachan Génie Electrique \& {\bf Informatique Industrielle}.
-\end{tabular}
+& Diplômé de l'IUT de Cachan Génie Électrique \& \textbf{Informatique Industrielle}.
+\end{longtable}
 
-\section*{Compétence}
-\begin{tabular}{L!{\VRule}R}
+\section*{Compétences}
+\begin{longtable}{L!{\VRule}R}
 Langages
-& {\bf C++11 (Boost)}, C89, C\# (.Net 4.0), java 6, ruby
+& \textbf{C++14}, C11, Java 6, C\# (.Net 3.5), Python, Ruby, VHDL
 
 \\
-Tests-U
+Tests
 & Google test, Boost unit-test, JUnit
 
 \\
 OS
-& FreeBSD, OpenBSD, Windows, Linux
-
-\\
-SGBDR
-& Oracle, Mysql
+& Linux, FreeBSD, OpenBSD, Windows
 
 \\
 SCM
-& {\bf git}, subversion
+& \textbf{git}, subversion
 
 \\
 Build
-& Autotools, CMake, bjam, Qmake, Maven, MSBuild, Usines (Teamcity, CCNet)
+& CMake, Autotools, bjam, Qmake, Maven, MSBuild
+
+\\Usines 
+& Teamcity, Buildbot, Jenkins, CCNet
 
 \\
-Documentation
-& {\bf Doxygen}, LaTex, HTML
+Doc
+& \textbf{Doxygen}, \LaTeX, HTML
 
 \\
 Langues
 & Anglais technique
 
-\end{tabular}
+\end{longtable}
 
-\section*{Expériences professionelles}
-\begin{tabular}{L!{\VRule}R}
-Depuis 2012
-& {\bf Architecte logiciel chez Enyx - Paris}\\
-& Création de l'API cliente C++ de consommation des 
-  données marché et de passage d'ordres.
+\clearpage
 
+\section*{Expériences professionnelles}
+\begin{longtable}{L!{\VRule}R}
+Depuis 2012 & \textbf{Architecte logiciel chez Enyx - Paris}
 \\
-2009 - 2012 
-& {\bf Prestation à la Société Générale - La défense}\\
-& Evolution et maintenance des composants C++, C\#, java 
-  de la chaîne de valorisation des deals.\\
-& Mises à jour des outils et process de dévelopement 
-  et d'intégration, en particulier migration + formation des équipes pour le passage
-  au SCM git.
+& Évolution et création des APIs d'accès aux données de marché
+  et passage d'ordre via \textbf{FPGA}.
+\end{longtable}
 
-\\
-2009
-& {\bf byVOLTA - Paris}\\
-& Conception d'un langage objet, proche de l'anglais, destiné à décrire
-les interactions entre les produits de l'entreprise, ainsi que son
-interpréteur en C++ modulaire, et par ce biais, extensible.
+\begin{enumerate}
+\item Les premières semaines au sein de l'équipe \textit{Market Data}
+  furent dédiées à l'ajout de tests
+  unitaires et de correctifs mineurs.
 
+\item Puis j'ai basculé sur la création du nouveau
+  produit d'accès et passage d'ordre. Ce dernier abstrait
+  l'accélération par FPGA de la pile TCP/IP, la publication
+  des ordres ainsi que la normalisation des marchés (CME, KRX).
+  A cette occasion j'ai pu étudier les couches basses
+  liées au FPGA et proposer des améliorations.
+
+\item Suite à ces propositions, j'ai rejoint l'équipe \textit{R\&D}
+  où je suis à présent en charge de trouver des nouvelles pistes pour
+  faire baisser les latences des produits.
+  J'ai étudié notamment les bus (PCIe, QPI, AXI)
+  afin de concevoir une couche de communication légère.
+  Afin de réaliser cette couche, composée de pilotes Linux et
+  bibliothèques utilisateurs, j'ai au préalable conçu un simulateur
+  couplant \href{http://qemu.org}{\bf Qemu} à
+  \href{http://ghdl.free.fr/}{\bf GHDL} afin d'accélérer le développement
+  logiciel \& matériel et permettre la mise en place d'une validation continue.
+\end{enumerate}
+
+\HRule
+
+\begin{longtable}{L!{\VRule}R}
+2009 - 2012 & \textbf{Prestation à la Société Générale - La défense}
 \\
-2006
-& {\bf dBResearch - Liverpool}\\
-& Conception et réalisation de la pile réseau TCP/IP d'une boite noire maritime (ATMEL ARM9) ainsi qu'un serveur http de contenu statique.
-\end{tabular}
+& Évolution et maintenance des composants C++, C\#, java
+  de la chaîne de valorisation des deals sur \textbf{grille de calculs}.
+\end{longtable}
+
+\begin{enumerate}
+\item Dans l'équipe \textit{TECH} de l'\textit{AGREG}.
+  Comme son nom l'indique, les tâches étaient résolument techniques et
+  légèrement décorrélées de la finance.
+
+\item Ma première mission a porté sur la prise en compte des fuseaux
+  horaires par le système.
+
+\item La seconde sur la mise en place d'un cache de données statiques 
+  sur le système de fichiers distribué.
+
+\item Les suivantes concernaient avant tout la création de nouvelles
+  bibliothèques utilisées par les équipes orientées finance
+  afin qu'elles puissent charger plus facilement leurs données
+  (accès BDD et caching) et communiquer leurs résultats ou éventuelles erreurs.
+
+\item En marge de ces projets, j'ai oe{}uvré à la mise à jour des processus de
+  développement, en particulier la migration \& formation des équipes
+  pour le passage à Git.
+  Ainsi que la revue de code systématique pour les développeurs débutants
+  ou peu rigoureux.
+\end{enumerate}
+
+Durant cette période, j'ai expérimenté:
+\begin{itemize}
+\item Le monde de la finance
+\item Utilisation du C++11
+\item Le travail en équipe
+\item Les problématiques de calcul sur grille
+\item Le développement sous Windows
+\item Le poids des processus dans un grand groupe
+\end{itemize}
+
+\clearpage
+
+\begin{center}
+$\hookrightarrow$
+\end{center}
+
+\begin{longtable}{L!{\VRule}R}
+2009 & \textbf{byVOLTA - Paris}
+\\
+& \textbf{Conception d'un langage objet}, proche de l'anglais,
+  destiné à décrire
+  les interactions entre les produits de l'entreprise, ainsi que son
+  interpréteur en C++ modulaire, et par ce biais, extensible.
+\end{longtable}
+
+\begin{enumerate}
+\item Lors du stage M2: seul développeur dans une société de 6
+  désigneurs sensoriels, ma responsabilité portait sur
+  l'écriture du firmware de \textit{LaChose}, un boitier intelligent
+  permettant par exemple aux clients de \textit{byVOLTA} d'orchestrer 
+  la communication entre l'éclairage, un diffuseur d'odeur et un 
+  équipement audio.
+
+\item Après une semaine de familiarisation avec la gamme de produit,
+  j'ai très rapidement été confronté aux questions techniques et reçu
+  assez de liberté pour avoir le choix de l'interface d'utilisation 
+  du client. J'ai alors opté pour la création d'un langage de script,
+  dont l'interpréteur a été implementé en C++ dans les semaines 
+  qui ont suivi.
+\end{enumerate}
+
+Ce contexte m'a aidé à améliorer:
+\begin{itemize}
+\item Ma communication avec les non-développeurs.
+\end{itemize}
+
+\HRule
+
+\begin{longtable}{L!{\VRule}R}
+2006 & \textbf{dBResearch - Liverpool}
+\\
+& Conception et réalisation de la pile réseau TCP/IP d'une boite noire 
+  maritime (ATMEL ARM9) ainsi qu'un serveur http de contenu statique.
+\end{longtable}
+
+\begin{enumerate}
+\item Dans le cadre du stage L2: seul, j'ai été chargé la première semaine de
+  comprendre le fonctionnement d'un cpu arm ainsi qu'un contrôleur ethernet.
+
+\item Puis d'écrire les deux suivantes en C89 un firmware destiné à 
+  les piloter.
+
+\item Enfin les deux dernières semaines ont été consacrées à la réalisation
+  d'une pile TCP/IP chargée de gérer une connexion ainsi
+  qu'un serveur http communiquant des statistiques propres à la pile.
+\end{enumerate}
+
+Ce stage m'a permis de renforcer:
+\begin{itemize}
+\item Mon anglais
+\item Mon autonomie
+\end{itemize}
+
+\section*{Projets personnels}
+\begin{longtable}{L!{\VRule}R}
+Github
+& \href{https://github.com/DavidKeller/kademlia}{{\bf DavidKeller/Kademlia (C++11)}}
+\\
+& Table de hashage distribuée simple et couverte par les tests unitaires.
+
+\end{longtable}
 
 \end{document}
+
