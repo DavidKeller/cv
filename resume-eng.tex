@@ -1,114 +1,160 @@
 \documentclass[10pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{array, xcolor, bibentry}
-\usepackage{hyperref}
+\usepackage{array, bibentry}
+\usepackage[svgnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
 \usepackage[margin=3cm]{geometry}
-
-\title{\bfseries{\Huge David Keller} \\ Software Developer}
-\date{}
+\usepackage{longtable}
+\usepackage{fontawesome}
+\usepackage{tikz}
+\usepackage{SIunits}
 
 \definecolor{lightgray}{gray}{0.8}
 \newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
 \newcolumntype{R}{p{0.8\textwidth}}
-\newcommand\VRule{\color{lightgray}\vrule width 0.5pt}
+\newcommand{\VRule}{\color{lightgray}\vrule width 0.5pt}
+\newcommand{\HRule}{\begin{center}{\color{lightgray}\rule{0.5\textwidth}{0.5pt}}\end{center}}
+\newcommand{\cvtag}[1]{
+  \tikz[baseline]
+  \node[anchor=base, draw=DarkSlateGray, rounded corners=0.5ex,
+        inner xsep=0.5ex, inner ysep=0.5ex,
+        text height=2ex, text depth=.25ex]{\color{DarkSlateGray}#1};
+}
 
 \begin{document}
 
+\title{\bfseries{\Huge David Keller} \\ Software Architect}
+\date{}
+\author{}
+
 \maketitle
 
-\begin{minipage}[ht]{0.48\textwidth}
-+336 23 556 502 \\
-\href{mailto:david.keller@litchis.fr}{david.keller@litchis.fr} \\
-75015 Paris France
-\end{minipage}
+\begin{center}
+\faPhone \hspace{1pt} +33 623 556 502
+\hspace{5pt} 
+\faAt \hspace{1pt} \href{mailto:david.keller@litchis.fr}{david.keller@litchis.fr}
+\hspace{5pt} 
+\faMapMarker \hspace{1pt} 92100 Boulogne Billancourt - France
+\end{center}
 
-\vspace{20pt}
+\begin{center}
+"\textit{They did not know it was impossible so they did it.}"
+\end{center}
 
-\section*{Strength}
-Strong C++ knowledge
+\section*{Strengths}
+Autonomy, Creativity, Curiosity
 
 \section*{Education}
-\begin{tabular}{L!{\VRule}R}
+\begin{longtable}{L!{\VRule}R}
 2006-09
 & Master at EFREI \textbf{Engineering school} of \textbf{Digital Technologies}.
 
 \\
 2004-06
 & Cachan Institute of Technology (\textbf{Industrial computing}).
-\end{tabular}
+\end{longtable}
 
 \section*{Skills}
-\begin{tabular}{L!{\VRule}R}
-Programming
-& \textbf{C++14}, C11, Java 6, C\# (.Net 3.5), Python, Ruby
+\begin{longtable}{L!{\VRule}R}
 
-\\
-Tests-U
-& Google test, Boost unit-test, JUnit
-
-\\
-OS
-& FreeBSD, OpenBSD, Windows, Linux
-
-\\
-SGBDR
-& Oracle, Mysql
-
-\\
-SCM
-& \textbf{git}, subversion
-
-\\
-Build
-& Autotools, CMake, bjam, Qmake, Maven, MSBuild, Usines (Teamcity, CCNet)
-
-\\
-Documentation
-& \textbf{Doxygen}, LaTex, HTML
-
-\\
 Languages
-& French, Technical English
+& English \textbf{B2.6}, French \textbf{Native}
+\end{longtable}
 
-\end{tabular}
+\clearpage
 
 \section*{Relevant experiences}
-\begin{tabular}{L!{\VRule}R}
-Since 2012
-& \textbf{Software architect at Enyx} - Paris\\
-& Market data consumption and order entry \textit{C++03} API creator.
+\subsection*{\textbf{Woorton}}
+\textbf{\color{MidnightBlue}Full stack Developer} \\
+\faCalendar \hspace{1pt} Since 2021 \hspace{1pt} \faMapMarker
+\hspace{1pt} Paris  \\
 
-\\
-2009 - 2012
-& \textbf{Developer at Société Générale} - La défense\\
-& Development of \textit{C++11} risk analysis software through \textbf{grid computing}.\\
-& Rework of the development/integration processes of
- the AGRISK department (100 members): \textbf{migration to \textit{git}} scm,
- \textbf{team training} and \textbf{code reviewer}.
+\begin{center}
+\cvtag{C++20} \cvtag{Terragrunt} \cvtag{Terraform}
+\cvtag{Kubernetes} \cvtag{Helm} \cvtag{AWS}
+\cvtag{CMake} \cvtag{Conan} \cvtag{Kafka} \cvtag{TDD} 
+\cvtag{Gitlab} \cvtag{Artifactory} \cvtag{Grafana} 
+\cvtag{Network} \cvtag{Market Data} \cvtag{Order Entry}
+\end{center}
 
-\\
-2009
-& \textbf{Developer at byVOLTA} - Paris\\
-& Design of an object language, close to english,
- used to express interactions between products of the company. Creation of its
- modular \textit{C++03} interpreter.
+\begin{enumerate}
+\item Development of Market Making system (\textit{C++}):
+\begin{enumerate}
+\item Writing of base libraries (parsing, logging, big decimal, network, ...)
+\item Writing of Exchange connectors and trading algorithms
+\end{enumerate}
+\item Optimization of legacy OTC system costs (\textit{AWS})
+\item Rework of the whole infrastructure definition (\textit{Terragrunt})
+\item Creation of the new OTC system
+\begin{enumerate}
+\item Design of the architecture
+\item Writing of the gateways \& Liquidity providers connectors
+\end{enumerate}
+\end{enumerate}
 
-\\
-2006
-& \textbf{Developer at dBResearch} - Liverpool\\
-& Creation of the \textit{C89} network \textbf{TCP/IP stack} of a black box (ATMEL ARM9)
- and a \textit{HTTP} static content server.
-\end{tabular}
+\subsection*{\textbf{Enyx}}
+\textbf{\color{MidnightBlue}Software architect - R\&D} \\
+\faCalendar \hspace{1pt} 2012 - 2021 \hspace{1pt} \faMapMarker
+\hspace{1pt} Paris  \\
+
+\begin{center}
+\cvtag{Kernel Linux} \cvtag{C++11} \cvtag{C} \cvtag{Python} \cvtag{Gitlab}
+\cvtag{CMake} \cvtag{Jenkins} \cvtag{Grafana} \cvtag{TDD} \cvtag{BDD}
+\cvtag{Network} \cvtag{VHDL} \cvtag{Verilog} \cvtag{HLS} \cvtag{QEMU}
+\cvtag{Market Data} \cvtag{Order Entry} \cvtag{Doxygen} \cvtag{Sphinx}
+\end{center}
+
+\begin{enumerate}
+\item Development of \textit{hardware} components and associated control API (\textit{C++}):
+\begin{enumerate}
+\item An exchange's low latency order entry matching engine (\textit{HLS}/\textit{VHDL})
+\item A bank's order entry risk checker (\textit{HLS}/\textit{Verilog})
+\item A fund's engine responsible of hedging existing
+      positions according to market changes (\textit{HLS})
+\end{enumerate}
+\item Rework technical intermediate level libraries (\textit{C/C++, python, Java})
+\item Rework software build stack and related CI
+\item Rework hardware synthesis scripts (\textit{python})
+\item Create low level libraries and drivers (\textit{C/C++})
+\item Create market data and order entry API (\textit{C++})
+\end{enumerate}
+
+\subsection*{Société Générale}
+\textbf{\color{MidnightBlue}{Developer}} \\
+\faCalendar \hspace{1pt} 2009 - 2012 \hspace{1pt} \faMapMarker \hspace{1pt} La défense \\
+\begin{center}
+\cvtag{Grid computing} \cvtag{C++11}\cvtag{Finance} \cvtag{ +15 years code base}
+\cvtag{MSBuild} \cvtag{TeamCity}
+\cvtag{Windows} \cvtag{C\#} \cvtag{Java}
+\end{center}
+
+\begin{enumerate}
+\item Development of risk analysis software through \textit{grid computing}.
+\item Rework of the development/integration processes of the AGRISK department
+      (100 members): \textit{migration to \textit{git}} scm, \textit{team training}
+      and \textit{code reviewer}.
+\end{enumerate}
+
+\subsection*{byVOLTA}
+\textbf{\color{MidnightBlue}{Developer}} \\
+\faCalendar \hspace{1pt} 2009 \hspace{1pt} \faMapMarker \hspace{1pt} Paris  \\
+\begin{center}
+\cvtag{Embedded} \cvtag{Interpreter} \cvtag{Linux} \cvtag{C++03} \cvtag{bjam}
+\end{center}
+
+\begin{enumerate}
+\item Design of an object language, close to English,
+      used to express interactions between products of the company.
+\item Creation of its
+      modular \textit{C++03} interpreter.
+\end{enumerate}
 
 \section*{Personal Project}
-\begin{tabular}{L!{\VRule}R}
-Github
-& \href{https://github.com/DavidKeller/kademlia}{{\bf DavidKeller/Kademlia (C++11)}}\\
-& Distributed hashtable.
+\begin{itemize}
+\item \faGithub\hspace{1pt} \href{https://github.com/DavidKeller/kademlia}{\bf DavidKeller/Kademlia (C++11)}
 
-\\
-& \href{https://github.com/DavidKeller/mDNS-hub}{\bf {DavidKeller/mDNS-hub (C++03)}}\\
-& Hub Zeroconf.
-\end{tabular}
+Simple distributed C++ hash table covered by unit tests.
+\end{itemize}
 
 \end{document}
+

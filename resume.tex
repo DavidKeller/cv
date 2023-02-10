@@ -1,34 +1,48 @@
 \documentclass[10pt]{article}
 \usepackage[utf8]{inputenc}
-\usepackage{array, xcolor, bibentry}
-\usepackage{hyperref}
+\usepackage{array, bibentry}
+\usepackage[svgnames]{xcolor}
+\usepackage[hidelinks]{hyperref}
 \usepackage[margin=3cm]{geometry}
 \usepackage{longtable}
-
-\title{\bfseries{\Huge David Keller} \\ Ingénieur développeur}
-\date{}
+\usepackage{fontawesome}
+\usepackage{tikz}
+\usepackage{SIunits}
 
 \definecolor{lightgray}{gray}{0.8}
 \newcolumntype{L}{>{\raggedleft}p{0.14\textwidth}}
 \newcolumntype{R}{p{0.8\textwidth}}
-\newcommand{\VRule}{{\color{lightgray}\vrule width 0.5pt}}
+\newcommand{\VRule}{\color{lightgray}\vrule width 0.5pt}
 \newcommand{\HRule}{\begin{center}{\color{lightgray}\rule{0.5\textwidth}{0.5pt}}\end{center}}
+\newcommand{\cvtag}[1]{
+  \tikz[baseline]
+  \node[anchor=base, draw=DarkSlateGray, rounded corners=0.5ex,
+        inner xsep=0.5ex, inner ysep=0.5ex,
+        text height=2ex, text depth=.25ex]{\color{DarkSlateGray}#1};
+}
 
 \begin{document}
 
+\title{\bfseries{\Huge David Keller} \\ Architecte Logiciel - R\&D}
+\date{}
+\author{}
+
 \maketitle
 
-\begin{minipage}[ht]{0.48\textwidth}
-06 23 55 65 02 \\
-\href{mailto:david.keller@litchis.fr}{david.keller@litchis.fr} \\
-75015 Paris France
-\end{minipage}
+\begin{center}
+\faPhone \hspace{1pt} 06 23 55 65 02
+\hspace{5pt} 
+\faAt \hspace{1pt} \href{mailto:david.keller@litchis.fr}{david.keller@litchis.fr}
+\hspace{5pt} 
+\faMapMarker \hspace{1pt} 92100 Boulogne Billancourt - France
+\end{center}
 
-\vspace{20pt}
+\begin{center}
+"\textit{Ils ne savaient pas que c’était impossible, alors ils l’ont fait.}"
+\end{center}
 
 \section*{Points forts}
-Compétence C++\\
-Autonomie, Curiosité, Créativité
+Autonomie, Créativité, Curiosité (Passionné)
 
 \section*{Formation}
 \begin{longtable}{L!{\VRule}R}
@@ -42,128 +56,141 @@ Autonomie, Curiosité, Créativité
 
 \section*{Compétences}
 \begin{longtable}{L!{\VRule}R}
-Langages
-& \textbf{C++14}, C11, Java 6, C\# (.Net 3.5), Python, Ruby, VHDL
 
-\\
-Tests
-& Google test, Boost unit-test, JUnit
-
-\\
-OS
-& Linux, FreeBSD, OpenBSD, Windows
-
-\\
-SCM
-& \textbf{git}, subversion
-
-\\
-Build
-& CMake, Autotools, bjam, Qmake, Maven, MSBuild
-
-\\Usines 
-& Teamcity, Buildbot, Jenkins, CCNet
-
-\\
-Doc
-& \textbf{Doxygen}, \LaTeX, HTML
-
-\\
 Langues
 & Anglais technique
-
 \end{longtable}
 
 \clearpage
 
 \section*{Expériences professionnelles}
-\begin{longtable}{L!{\VRule}R}
-Depuis 2012 & \textbf{Architecte logiciel chez Enyx - Paris}
-\\
-& Évolution et création des APIs d'accès aux données de marché
-  et passage d'ordre via \textbf{FPGA}.
-\end{longtable}
+
+\subsection*{\textbf{Enyx}}
+\textbf{\color{MidnightBlue}Architecte logiciel - R\&D} \\
+\faCalendar \hspace{1pt} Depuis 2012 \hspace{1pt} \faMapMarker
+\hspace{1pt} Paris  \\
+
+\begin{center}
+\cvtag{Kernel Linux} \cvtag{C++11} \cvtag{C} \cvtag{Python} \cvtag{Gitlab}
+\cvtag{CMake} \cvtag{Jenkins} \cvtag{Grafana} \cvtag{TDD} \cvtag{BDD}
+\cvtag{Réseau} \cvtag{VHDL} \cvtag{Verilog} \cvtag{HLS} \cvtag{QEMU}
+\cvtag{Market Data} \cvtag{Passage d'ordre} \cvtag{Doxygen} \cvtag{Sphinx}
+\end{center}
 
 \begin{enumerate}
 \item Les premières semaines au sein de l'équipe \textit{Market Data}
-  furent dédiées à l'ajout de tests
-  unitaires et de correctifs mineurs.
+  furent dédiées à l'ajout de tests unitaires, de correctifs mineurs
+  et d'outils de test pour les IPs \textit{VHDL}.
 
 \item Puis j'ai basculé sur la création du nouveau
   produit d'accès et passage d'ordre. Ce dernier abstrait
-  l'accélération par FPGA de la pile TCP/IP, la publication
-  des ordres ainsi que la normalisation des marchés (CME, KRX).
+  l'accélération par \textit{FPGA} de la pile \textit{TCP/IPv4}, la publication
+  des ordres ainsi que la normalisation des marchés.
   A cette occasion j'ai pu étudier les couches basses
   liées au FPGA et proposer des améliorations.
 
 \item Suite à ces propositions, j'ai rejoint l'équipe \textit{R\&D}
-  où je suis à présent en charge de trouver des nouvelles pistes pour
+  où j'étais en charge de trouver des nouvelles pistes pour
   faire baisser les latences des produits.
-  J'ai étudié notamment les bus (PCIe, QPI, AXI)
+  J'ai étudié notamment les bus (\textit{PCIe}, \textit{QPI}, \textit{AXI})
   afin de concevoir une couche de communication légère.
-  Afin de réaliser cette couche, composée de pilotes Linux et
+  Pour réaliser cette couche, composée de pilotes Linux et
   bibliothèques utilisateurs, j'ai au préalable conçu un simulateur
-  couplant \href{http://qemu.org}{\bf Qemu} à
-  \href{http://ghdl.free.fr/}{\bf GHDL} afin d'accélérer le développement
-  logiciel \& matériel et permettre la mise en place d'une validation continue.
+  couplant \href{http://qemu.org}{\textit QEMU} (pour faire tourner le pilote
+  dans un environment maitrisé) à \href{http://ghdl.free.fr/}{\textit GHDL}
+  (pour émuler le FPGA) afin d'accélérer le développement et permettre
+  la mise en place d'une validation continue.
+
+\item Puis je me suis tourné vers l'outillage des ingénieurs matériels en 
+  spécifiant un système de \textit{synthèse} de firmwares sur une
+  ferme de serveurs via \textit{Apache MESOS} afin de mutualiser les
+  ressources et gagner en temps de génération.
+  Toujours dans la même optique, j'ai récrit en python système de build
+  matériel afin de simplifier la gestion des différents outils
+  fabricants (Xilinx, Intel).
+
+\item Conséquence du départ du CTO, l'équipe \textit{R\&D} a été dissoute
+  et j'ai intégré l'équipe \textit{Techno} où est développée entre autre
+  la pile \textit{TCP/IPv4} matérielle. J'ai supervisé techniquement 
+  le développement d'une bibliothèque qui permet de décharger la gestion
+  du \textit{TCPv4} sur \textit{FPGA} d'une application sans changement
+  (via interception des fonctions \textit{BSD sockets}).
+
+\item J'ai également refait le système de build, du logiciel cette fois,
+  en réalisant un outil en \textit{bash} capitalisant sur \textit{CMake}
+  et le packaging \textit{rpm} \& \textit{deb}, ainsi que la mise en place
+  de dépôts internes pour de nombreuses distributions.
+  
+\item L'opportunité s'est présentée de faire de la recherche appliquée
+ via un projet en \textit{\href{https://www.xilinx.com/products/design-tools/vivado/integration/esl-design.html}{HLS Xilinx}}: il fallait découvrir ce nouveau langage et
+ réaliser avec une application logicielle/matérielle qui devait répondre 
+ en quelques \micro\second{} à des évènements boursiers. 
+
+\item Le projet ayant été un relatif succès, j'ai été chargé d'un autre
+ projet plus ambitieux, en \textit{\href{https://www.intel.com/content/www/us/en/software/programmable/quartus-prime/hls-compiler.html}{HLS Intel}}, lui aussi à découvrir.
+ J'ai travaillé en totale autonomie à cette occasion, en spécifiant avec
+ les clients américains et en gérant deux prestataires,
+ dont un anglais, afin qu'ils me déchargent de certaines parties du projet
+ et qu'ils montent en compétence sur la \textit{HLS}.
+
+\item Le projet terminé, j'ai enchainé sur la spécification et
+ l'écriture d'une couche d'abstraction et de simulation du matériel,
+ en \textit{C} \& \textit{C++11}, commune à toutes les équipes.
+ La revue systématique de code a été mise en place à cette occasion.
 \end{enumerate}
 
 \HRule
 
-\begin{longtable}{L!{\VRule}R}
-2009 - 2012 & \textbf{Prestation à la Société Générale - La défense}
-\\
-& Évolution et maintenance des composants C++, C\#, java
-  de la chaîne de valorisation des deals sur \textbf{grille de calculs}.
-\end{longtable}
+\subsection*{Prestation à la Société Générale}
+\textbf{\color{MidnightBlue}{Développeur}} \\
+\faCalendar \hspace{1pt} 2009 - 2012 \hspace{1pt} \faMapMarker \hspace{1pt} La défense \\
+\begin{center}
+\cvtag{Grille de calculs} \cvtag{C++11}\cvtag{Finance} \cvtag{Base de code de +15 ans}
+\cvtag{MSBuild} \cvtag{TeamCity}
+\cvtag{Windows} \cvtag{C\#} \cvtag{Java} 
+\end{center}
 
 \begin{enumerate}
 \item Dans l'équipe \textit{TECH} de l'\textit{AGREG}.
   Comme son nom l'indique, les tâches étaient résolument techniques et
   légèrement décorrélées de la finance.
 
-\item Ma première mission a porté sur la prise en compte des fuseaux
-  horaires par le système.
+\item Ma première mission a porté sur la prise en compte des multiples fuseaux
+  horaires par le système (la banque ayant des bureaux sur plusieurs continents).
 
 \item La seconde sur la mise en place d'un cache de données statiques 
-  sur le système de fichiers distribué.
+  sur le système de fichiers distribué \textit{NetApp}. Le challenge était ici
+  d'assurer l'unicité des modifications sur les données via un verrou
+  fiable (gestion des crashs de processus) sur le système de fichier.
 
 \item Les suivantes concernaient avant tout la création de nouvelles
   bibliothèques utilisées par les équipes orientées finance
   afin qu'elles puissent charger plus facilement leurs données
-  (accès BDD et caching) et communiquer leurs résultats ou éventuelles erreurs.
+  (accès BDD et caching) et communiquer leurs résultats ou éventuelles
+  erreurs.
 
-\item En marge de ces projets, j'ai oe{}uvré à la mise à jour des processus de
+\item J'ai également refondu la gestion d'erreur du système écrit en C++,
+  en collaboration avec les équipes support afin de faciliter leurs
+  diagnostics en véhiculant un maximum d'informations via les
+  \textit{std::exception\_ptr}, et du \textit{XSLT} pour afficher une
+  page html les mettant en forme.
+
+\item En marge de ces projets, j'ai \oe{}uvré à la mise
+  à jour des processus de
   développement, en particulier la migration \& formation des équipes
-  pour le passage à Git.
+  pour le passage à Git, la simplification du build et la division par plus
+  de 2 de sa durée.
   Ainsi que la revue de code systématique pour les développeurs débutants
-  ou peu rigoureux.
+  ou peu rigoureux, puis une phase de formation pour leur expliquer 
+  diverses notions telles que la complexité algorithmique.
 \end{enumerate}
 
-Durant cette période, j'ai expérimenté:
-\begin{itemize}
-\item Le monde de la finance
-\item Utilisation du C++11
-\item Le travail en équipe
-\item Les problématiques de calcul sur grille
-\item Le développement sous Windows
-\item Le poids des processus dans un grand groupe
-\end{itemize}
-
-\clearpage
-
+\subsection*{byVOLTA}
+\textbf{\color{MidnightBlue}{Développeur}} \\
+\faCalendar \hspace{1pt} 2009 \hspace{1pt} \faMapMarker \hspace{1pt} Paris  \\
 \begin{center}
-$\hookrightarrow$
+\cvtag{Embarqué} \cvtag{Interpréteur} \cvtag{Linux} \cvtag{C++03} \cvtag{bjam}
 \end{center}
-
-\begin{longtable}{L!{\VRule}R}
-2009 & \textbf{byVOLTA - Paris}
-\\
-& \textbf{Conception d'un langage objet}, proche de l'anglais,
-  destiné à décrire
-  les interactions entre les produits de l'entreprise, ainsi que son
-  interpréteur en C++ modulaire, et par ce biais, extensible.
-\end{longtable}
 
 \begin{enumerate}
 \item Lors du stage M2: seul développeur dans une société de 6
@@ -181,46 +208,34 @@ $\hookrightarrow$
   qui ont suivi.
 \end{enumerate}
 
-Ce contexte m'a aidé à améliorer:
-\begin{itemize}
-\item Ma communication avec les non-développeurs.
-\end{itemize}
-
 \HRule
 
-\begin{longtable}{L!{\VRule}R}
-2006 & \textbf{dBResearch - Liverpool}
-\\
-& Conception et réalisation de la pile réseau TCP/IP d'une boite noire 
-  maritime (ATMEL ARM9) ainsi qu'un serveur http de contenu statique.
-\end{longtable}
+\subsection*{dBResearch}
+\textbf{\color{MidnightBlue}{Développeur}} \\
+\faCalendar \hspace{1pt} 2006 \hspace{1pt} \faMapMarker \hspace{1pt} Liverpool \\
+\begin{center}
+\cvtag{TCP/IPv4} \cvtag{Embarqué} \cvtag{Anglais} \cvtag{Linux}
+\end{center}
 
 \begin{enumerate}
 \item Dans le cadre du stage L2: seul, j'ai été chargé la première semaine de
-  comprendre le fonctionnement d'un cpu arm ainsi qu'un contrôleur ethernet.
+  comprendre le fonctionnement d'un cpu \textit{ATMEL ARM9} ainsi
+  que son contrôleur \textit{Ethernet} présents dans une boite noire maritime.
 
 \item Puis d'écrire les deux suivantes en C89 un firmware destiné à 
   les piloter.
 
 \item Enfin les deux dernières semaines ont été consacrées à la réalisation
-  d'une pile TCP/IP chargée de gérer une connexion ainsi
-  qu'un serveur http communiquant des statistiques propres à la pile.
+  d'une pile TCP/IP chargée de gérer une unique connexion ainsi
+  qu'un serveur HTTP communiquant des statistiques propres à la pile.
 \end{enumerate}
 
-Ce stage m'a permis de renforcer:
-\begin{itemize}
-\item Mon anglais
-\item Mon autonomie
-\end{itemize}
-
 \section*{Projets personnels}
-\begin{longtable}{L!{\VRule}R}
-Github
-& \href{https://github.com/DavidKeller/kademlia}{{\bf DavidKeller/Kademlia (C++11)}}
-\\
-& Table de hashage distribuée simple et couverte par les tests unitaires.
+\begin{itemize}
+\item \faGithub\hspace{1pt} \href{https://github.com/DavidKeller/kademlia}{\bf DavidKeller/Kademlia (C++11)}
 
-\end{longtable}
+Table de hachage distribuée simple et couverte par des tests unitaires.
+\end{itemize}
 
 \end{document}
 
